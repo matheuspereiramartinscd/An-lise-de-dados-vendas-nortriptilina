@@ -86,12 +86,14 @@ O dataset utilizado contém as seguintes colunas:
 - Identificação de outliers em vendas mensais.
 
 ## Dados
-![Screenshot_1](https://github.com/user-attachments/assets/cf68673d-c921-450c-9fd7-120288b4d494)
-
-## Após limpeza
 ![dados](https://github.com/user-attachments/assets/da2eb21d-d9d2-4bbe-a924-af670b854233)
 
+## Após limpeza
+![Screenshot_1](https://github.com/user-attachments/assets/cf68673d-c921-450c-9fd7-120288b4d494)
+
 ## Relatório
+![relatorio_vendas_nortriptilina-02](https://github.com/user-attachments/assets/a8bff2cd-9380-48f2-8042-1e6d41c2bff6)
+![relatorio_vendas_nortriptilina-01](https://github.com/user-attachments/assets/2d543643-d931-4801-ae89-b5a41226d509)
 ![relatorio_vendas_nortriptilina-11](https://github.com/user-attachments/assets/6405d4a5-2f3b-4d32-ba7a-ed19c4456e48)
 ![relatorio_vendas_nortriptilina-10](https://github.com/user-attachments/assets/fb350606-e67e-45bf-980e-01b5c57dd1cc)
 ![relatorio_vendas_nortriptilina-09](https://github.com/user-attachments/assets/dca826d0-3c5e-4822-8b72-54e1a5dc9c83)
@@ -101,8 +103,7 @@ O dataset utilizado contém as seguintes colunas:
 ![relatorio_vendas_nortriptilina-05](https://github.com/user-attachments/assets/78986b48-ae61-4381-bf85-6b01d0c665b8)
 ![relatorio_vendas_nortriptilina-04](https://github.com/user-attachments/assets/698d497d-ff7d-46d2-80dd-f8e4c2c8129f)
 ![relatorio_vendas_nortriptilina-03](https://github.com/user-attachments/assets/8061ccdf-ecea-4d4b-b169-636cde321520)
-![relatorio_vendas_nortriptilina-02](https://github.com/user-attachments/assets/a8bff2cd-9380-48f2-8042-1e6d41c2bff6)
-![relatorio_vendas_nortriptilina-01](https://github.com/user-attachments/assets/2d543643-d931-4801-ae89-b5a41226d509)
+
 
 
 
