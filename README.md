@@ -65,19 +65,22 @@ O dataset utilizado contém as seguintes colunas:
 ## Como Utilizar
 
 1. Certifique-se de ter o Python instalado na sua máquina (versão 3.7 ou superior).
-2. Instale as dependências usando o comando:
+2. Crie o ambiente virtual: Na raiz do seu projeto, use o seguinte comando para criar o ambiente virtual:                       python -m venv venv
+3. Ative o ambiente virtual:                                                                                                    venv\Scripts\activate
+4. Instale as dependências usando o comando:
+5. 
    ```bash
    pip install -r requirements.txt
    ```
-3. Execute o script de limpeza de dados:
+6. Execute o script de limpeza de dados:
    ```bash
    python limpeza_dados.py
    ```
-4. Execute o script de análise para obter insights:
+7. Execute o script de análise para obter insights:
    ```bash
    python analise_vendas.py
    ```
-5. Gere o relatório em Word com:
+8. Gere o relatório em Word com:
    ```bash
    python relatorio.py
    ```
