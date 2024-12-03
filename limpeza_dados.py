@@ -1,5 +1,3 @@
-# script.py
-
 import pandas as pd
 
 # Carregar o dataset (agora em formato .xlsx)
@@ -8,13 +6,19 @@ dados = pd.read_excel('dados_vendas.xlsx')
 # Exibir as primeiras linhas para inspeção inicial
 print(dados.head())
 
-# --- TRATAMENTO DE VALORES AUSENTES ---
+# --- TRATAMENTO DE VALORES AUSENTES --- 
 print("Valores ausentes antes do tratamento:")
 print(dados.isnull().sum())
 
 # Tratar valores ausentes
 dados['IDADE'].fillna(dados['IDADE'].mean(), inplace=True)
 dados.fillna({'QTD_UNIDADE_FARMACOTECNICA': 0, 'SEXO': 'Desconhecido'}, inplace=True)
+
+# --- EXCLUSÃO DE DADOS COM IDADE INVÁLIDA --- 
+# Remover linhas onde a idade é nula, zero ou em branco
+dados = dados[dados['IDADE'].notnull()]  # Remover valores nulos
+dados = dados[dados['IDADE'] > 0]        # Remover idades menores ou iguais a 0
+dados = dados[dados['IDADE'] >= 18]      # Incluir apenas idades de 18 anos ou mais
 
 # --- REMOÇÃO DE DUPLICATAS ---
 dados.drop_duplicates(inplace=True)
