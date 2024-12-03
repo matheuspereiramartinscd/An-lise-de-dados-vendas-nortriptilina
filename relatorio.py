@@ -68,16 +68,16 @@ def gerar_relatorio_word(dados):
     doc.add_heading('Desvio Padrão de Vendas por Mês', level=1)
     doc.add_paragraph(f'{desvio_padrao_vendas_por_mes:,.0f}')
 
-    # --- 6. Vendas por Sexo ---
-    vendas_por_sexo = dados.groupby('SEXO')['QTD_UNIDADE_FARMACOTECNICA'].sum()
-    doc.add_heading('Vendas por Sexo', level=1)
+  # --- 3. Vendas por Gênero ---
+    vendas_por_genero = dados.groupby('GÊNERO')['QTD_UNIDADE_FARMACOTECNICA'].sum()
+    doc.add_heading('Vendas por Gênero', level=1)
     table = doc.add_table(rows=1, cols=2)
     hdr_cells = table.rows[0].cells
-    hdr_cells[0].text = 'Sexo'
+    hdr_cells[0].text = 'Gênero'
     hdr_cells[1].text = 'Quantidade Vendida'
-    for sexo, qtd in vendas_por_sexo.items():
+    for genero, qtd in vendas_por_genero.items():
         row_cells = table.add_row().cells
-        row_cells[0].text = str(sexo)
+        row_cells[0].text = str(genero)
         row_cells[1].text = f'{qtd:,.0f}'
 
     # --- 7. Vendas por Estado (UF) ---

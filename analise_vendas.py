@@ -3,7 +3,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Carregar o dataset
-dados = pd.read_excel('dados_vendas.xlsx')
+dados = pd.read_excel('dados_vendas_limpo.xlsx')
 
 # --- 1. Faturamento Total ---
 faturamento_total = dados['VALOR_VENDA'].sum() if 'VALOR_VENDA' in dados.columns else "Coluna VALOR_VENDA não encontrada"
@@ -32,11 +32,13 @@ desvio_padrao_vendas_por_mes = vendas_por_mes.std()
 print(f"Desvio Padrão de Vendas por Mês: {desvio_padrao_vendas_por_mes}")
 # Insight: O desvio padrão ajuda a entender a volatilidade nas vendas. Se o desvio for alto, isso pode indicar que as vendas são muito variáveis de mês para mês.
 
-# --- 6. Vendas por Sexo ---
-vendas_por_sexo = dados.groupby('SEXO')['QTD_UNIDADE_FARMACOTECNICA'].sum()
-print("Vendas por Sexo: ")
-print(vendas_por_sexo)
+# --- 6. Vendas por Gênero ---
+vendas_por_genero = dados.groupby('GÊNERO')['QTD_UNIDADE_FARMACOTECNICA'].sum()
+print("Vendas por Gênero: ")
+print(vendas_por_genero)
+
 # Insight: Se as vendas de um medicamento estiverem concentradas em um gênero específico, isso pode sugerir que ele é mais utilizado por aquele grupo, possivelmente devido a fatores demográficos ou médicos.
+
 
 # --- 7. Vendas por Estado (UF) ---
 vendas_por_estado = dados.groupby('UF_VENDA')['QTD_UNIDADE_FARMACOTECNICA'].sum()
