@@ -65,8 +65,13 @@ O dataset utilizado contém as seguintes colunas:
 ## Como Utilizar
 
 1. Certifique-se de ter o Python instalado na sua máquina (versão 3.7 ou superior).
-2. Crie o ambiente virtual: Na raiz do seu projeto, use o seguinte comando para criar o ambiente virtual:                       python -m venv venv
-3. Ative o ambiente virtual:                                                                                                    venv\Scripts\activate
+2. Crie o ambiente virtual: Na raiz do seu projeto, use o seguinte comando para criar o ambiente virtual:                       ``bash   
+   python -m venv venv
+   ```
+3. Ative o ambiente virtual:                                                                                                
+   ``bash   
+   venv\Scripts\activate
+   ```
 4. Instale as dependências usando o comando:
 5. 
    ```bash
