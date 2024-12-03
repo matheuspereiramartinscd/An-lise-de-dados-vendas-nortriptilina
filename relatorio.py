@@ -29,6 +29,28 @@ def gerar_relatorio_word(dados):
     doc.add_heading('Quantidade Total de Produtos Vendidos', level=1)
     doc.add_paragraph(f'{qtd_total_produtos}')
 
+     # --- Métrica: Total e mês com mais vendas em 2020 e 2021 ---
+    dados['MÊS_VENDA'] = pd.to_datetime(dados['MÊS_VENDA'], format='%m/%d/%Y', errors='coerce')
+    dados['ANO_VENDA'] = dados['MÊS_VENDA'].dt.year
+
+    vendas_por_ano_mes = dados.groupby(['ANO_VENDA', dados['MÊS_VENDA'].dt.month])['QTD_UNIDADE_FARMACOTECNICA'].sum()
+    vendas_2020 = vendas_por_ano_mes.loc[2020].sum()
+    vendas_2021 = vendas_por_ano_mes.loc[2021].sum()
+
+    mes_top_2020 = vendas_por_ano_mes.loc[2020].idxmax()
+    vendas_top_2020 = vendas_por_ano_mes.loc[2020].max()
+
+    mes_top_2021 = vendas_por_ano_mes.loc[2021].idxmax()
+    vendas_top_2021 = vendas_por_ano_mes.loc[2021].max()
+
+    doc.add_heading('Vendas Totais e Mês com Mais Vendas (2020 e 2021)', level=1)
+    doc.add_paragraph(f"Total de vendas em 2020: {vendas_2020:,.0f}")
+    doc.add_paragraph(f"Mês com mais vendas em 2020: {mes_top_2020} (Vendas: {vendas_top_2020:,.0f})")
+    doc.add_paragraph(f"Total de vendas em 2021: {vendas_2021:,.0f}")
+    doc.add_paragraph(f"Mês com mais vendas em 2021: {mes_top_2021} (Vendas: {vendas_top_2021:,.0f})")
+
+  
+
     # --- 3. Média de Vendas por Mês ---
     dados['MÊS_VENDA'] = pd.to_datetime(dados['MÊS_VENDA'], format='%m/%d/%Y', errors='coerce')
     vendas_por_mes = dados.groupby(dados['MÊS_VENDA'].dt.to_period('M'))['QTD_UNIDADE_FARMACOTECNICA'].sum()
@@ -122,6 +144,8 @@ def gerar_relatorio_word(dados):
     doc.add_paragraph("Analisando a relação entre a idade dos clientes e a quantidade vendida.")  # Alterar para add_paragraph
     doc.add_picture(correlacao_grafico, width=Inches(5.5))
 
+    
+
 
     # --- 12. Conclusão ---
     doc.add_heading('Conclusão', level=1)
@@ -133,7 +157,7 @@ def gerar_relatorio_word(dados):
     print("Relatório gerado com sucesso em 'relatorio_vendas.docx'")
 
 # Carregar o dataset
-dados = pd.read_excel('dados_vendas.xlsx')
+dados = pd.read_excel('dados_vendas_limpo.xlsx')
 
 # Gerar o relatório
 gerar_relatorio_word(dados)
