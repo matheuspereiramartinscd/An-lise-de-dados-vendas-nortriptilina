@@ -18,17 +18,7 @@ O objetivo deste projeto é processar e analisar um dataset de vendas, fornecend
   - Padronização de datas e valores monetários.
   - Exclusão de registros inválidos, como idades menores que 18.
 
-### 2. `analise_vendas.py`
-
-- **Descrição**: Script para análise exploratória de dados.
-- **Principais Análises**:
-  - Cálculo do faturamento total e quantidade de produtos vendidos.
-  - Estatísticas de vendas por mês (média, mediana e desvio padrão).
-  - Distribuição das vendas por sexo, estado e município.
-  - Visualização da distribuição etária dos clientes e tendência de vendas ao longo do tempo.
-  - Análise de outliers e correlações entre variáveis.
-
-### 3. `relatorio.py`
+### 2. `relatorio.py`
 
 - **Descrição**: Script para geração de relatórios em formato Word, com visualizações gráficas geradas a partir do dataset.
 - **Principais Funcionalidades**:
@@ -83,11 +73,7 @@ O dataset utilizado contém as seguintes colunas:
    ```bash
    python limpeza_dados.py
    ```
-7. Execute o script de análise para obter insights:
-   ```bash
-   python analise_vendas.py
-   ```
-8. Gere o relatório em Word com:
+7. Gere o relatório em Word com:
    ```bash
    python relatorio.py
    ```
@@ -98,5 +84,25 @@ O dataset utilizado contém as seguintes colunas:
 - Análise geográfica detalhada das vendas (por estado e município).
 - Entendimento do perfil dos clientes (idade e gênero).
 - Identificação de outliers em vendas mensais.
+
+## Dados
+![Screenshot_1](https://github.com/user-attachments/assets/cf68673d-c921-450c-9fd7-120288b4d494)
+
+## Após limpeza
+![dados](https://github.com/user-attachments/assets/da2eb21d-d9d2-4bbe-a924-af670b854233)
+
+## Relatório
+![relatorio_vendas_nortriptilina-11](https://github.com/user-attachments/assets/6405d4a5-2f3b-4d32-ba7a-ed19c4456e48)
+![relatorio_vendas_nortriptilina-10](https://github.com/user-attachments/assets/fb350606-e67e-45bf-980e-01b5c57dd1cc)
+![relatorio_vendas_nortriptilina-09](https://github.com/user-attachments/assets/dca826d0-3c5e-4822-8b72-54e1a5dc9c83)
+![relatorio_vendas_nortriptilina-08](https://github.com/user-attachments/assets/3ecfd0d3-c716-42f9-96f3-e5a897cfa768)
+![relatorio_vendas_nortriptilina-07](https://github.com/user-attachments/assets/3c2d7df4-fd71-495a-91cf-63435e6e62be)
+![relatorio_vendas_nortriptilina-06](https://github.com/user-attachments/assets/06129051-5c7b-4491-a795-858d28782d8a)
+![relatorio_vendas_nortriptilina-05](https://github.com/user-attachments/assets/78986b48-ae61-4381-bf85-6b01d0c665b8)
+![relatorio_vendas_nortriptilina-04](https://github.com/user-attachments/assets/698d497d-ff7d-46d2-80dd-f8e4c2c8129f)
+![relatorio_vendas_nortriptilina-03](https://github.com/user-attachments/assets/8061ccdf-ecea-4d4b-b169-636cde321520)
+![relatorio_vendas_nortriptilina-02](https://github.com/user-attachments/assets/a8bff2cd-9380-48f2-8042-1e6d41c2bff6)
+![relatorio_vendas_nortriptilina-01](https://github.com/user-attachments/assets/2d543643-d931-4801-ae89-b5a41226d509)
+
 
 
