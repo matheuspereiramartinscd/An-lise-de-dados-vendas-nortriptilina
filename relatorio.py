@@ -23,19 +23,17 @@ def gerar_relatorio_word(dados):
     doc = Document()
     doc.add_heading(f'Relatório de Análise de Vendas - {datetime.now().strftime("%d/%m/%Y")}', 0)
 
-    # --- 1. Faturamento Total ---
-    faturamento_total = dados['VALOR_VENDA'].sum() if 'VALOR_VENDA' in dados.columns else "Coluna VALOR_VENDA não encontrada"
-    doc.add_heading('Faturamento Total', level=1)
-    doc.add_paragraph(formatar_moeda(faturamento_total))
+    # Filtrar apenas clientes com idade maior que 18
+    dados_filtrados = dados[dados['IDADE'] > 18]
 
     # --- 2. Quantidade Total de Produtos Vendidos ---
-    qtd_total_produtos = dados['QTD_UNIDADE_FARMACOTECNICA'].sum() if 'QTD_UNIDADE_FARMACOTECNICA' in dados.columns else 0
+    qtd_total_produtos = dados_filtrados['QTD_UNIDADE_FARMACOTECNICA'].sum() if 'QTD_UNIDADE_FARMACOTECNICA' in dados_filtrados.columns else 0
     doc.add_heading('Quantidade Total de Produtos Vendidos', level=1)
     doc.add_paragraph(f'{qtd_total_produtos}')
 
     # --- 3. Média de Vendas por Mês ---
-    dados['MÊS_VENDA'] = pd.to_datetime(dados['MÊS_VENDA'], format='%m/%d/%Y', errors='coerce')
-    vendas_por_mes = dados.groupby(dados['MÊS_VENDA'].dt.to_period('M'))['QTD_UNIDADE_FARMACOTECNICA'].sum()
+    dados_filtrados['MÊS_VENDA'] = pd.to_datetime(dados_filtrados['MÊS_VENDA'], format='%m/%d/%Y', errors='coerce')
+    vendas_por_mes = dados_filtrados.groupby(dados_filtrados['MÊS_VENDA'].dt.to_period('M'))['QTD_UNIDADE_FARMACOTECNICA'].sum()
     media_vendas_por_mes = vendas_por_mes.mean()
     doc.add_heading('Média de Vendas por Mês', level=1)
     doc.add_paragraph(f'{media_vendas_por_mes:,.0f}')
@@ -51,7 +49,7 @@ def gerar_relatorio_word(dados):
     doc.add_paragraph(f'{desvio_padrao_vendas_por_mes:,.0f}')
 
     # --- 6. Vendas por Sexo ---
-    vendas_por_sexo = dados.groupby('SEXO')['QTD_UNIDADE_FARMACOTECNICA'].sum()
+    vendas_por_sexo = dados_filtrados.groupby('SEXO')['QTD_UNIDADE_FARMACOTECNICA'].sum()
     doc.add_heading('Vendas por Sexo', level=1)
     table = doc.add_table(rows=1, cols=2)
     hdr_cells = table.rows[0].cells
@@ -63,7 +61,7 @@ def gerar_relatorio_word(dados):
         row_cells[1].text = f'{qtd:,.0f}'
 
     # --- 7. Vendas por Estado (UF) ---
-    vendas_por_estado = dados.groupby('UF_VENDA')['QTD_UNIDADE_FARMACOTECNICA'].sum()
+    vendas_por_estado = dados_filtrados.groupby('UF_VENDA')['QTD_UNIDADE_FARMACOTECNICA'].sum()
     doc.add_heading('Vendas por Estado', level=1)
     table = doc.add_table(rows=1, cols=2)
     hdr_cells = table.rows[0].cells
@@ -75,7 +73,7 @@ def gerar_relatorio_word(dados):
         row_cells[1].text = f'{qtd:,.0f}'
 
     # --- 8. Vendas por Município ---
-    vendas_por_municipio = dados.groupby('MUNICIPIO_VENDA')['QTD_UNIDADE_FARMACOTECNICA'].sum()
+    vendas_por_municipio = dados_filtrados.groupby('MUNICIPIO_VENDA')['QTD_UNIDADE_FARMACOTECNICA'].sum()
     doc.add_heading('Vendas por Município', level=1)
     table = doc.add_table(rows=1, cols=2)
     hdr_cells = table.rows[0].cells
@@ -87,11 +85,10 @@ def gerar_relatorio_word(dados):
         row_cells[1].text = f'{qtd:,.0f}'
 
     # --- 9. Distribuição de Idade dos Clientes ---
-    dados_filtrados = dados[dados['IDADE'] > 10]  # Excluir idades 0
     melhorar_grafico()
     plt.figure()
     sns.histplot(dados_filtrados['IDADE'], kde=True, color='skyblue')
-    plt.title('Distribuição de Idade dos Clientes (Sem Idade 0)', fontsize=14)
+    plt.title('Distribuição de Idade dos Clientes (Somente Idades > 18)', fontsize=14)
     plt.xlabel('Idade')
     plt.ylabel('Frequência')
     idade_grafico = 'idade_dist.png'
@@ -101,7 +98,7 @@ def gerar_relatorio_word(dados):
     doc.add_picture(idade_grafico, width=Inches(5.5))
 
     # --- 10. Tendência de Vendas ao Longo do Tempo ---
-    vendas_mensais = dados.groupby(dados['MÊS_VENDA'].dt.to_period('M'))['QTD_UNIDADE_FARMACOTECNICA'].sum()
+    vendas_mensais = dados_filtrados.groupby(dados_filtrados['MÊS_VENDA'].dt.to_period('M'))['QTD_UNIDADE_FARMACOTECNICA'].sum()
     plt.figure()
     sns.lineplot(x=vendas_mensais.index.astype(str), y=vendas_mensais.values, color='green')
     plt.title('Tendência de Vendas por Mês', fontsize=14)
@@ -123,7 +120,7 @@ def gerar_relatorio_word(dados):
     correlacao_grafico = 'correlacao_idade_vendas.png'
     plt.savefig(correlacao_grafico)
     doc.add_heading('Correlação entre Idade e Quantidade Vendida', level=1)
-    doc.add_paragraph("Analisando a relação entre a idade dos clientes e a quantidade vendida.")
+    doc.add_parágrafo("Analisando a relação entre a idade dos clientes e a quantidade vendida.")
     doc.add_picture(correlacao_grafico, width=Inches(5.5))
 
     # --- 12. Conclusão ---
