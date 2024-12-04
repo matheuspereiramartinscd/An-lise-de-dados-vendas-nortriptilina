@@ -100,7 +100,6 @@ O dataset utilizado contém as seguintes colunas:
 ![relatorio_vendas_nortriptilina-06](https://github.com/user-attachments/assets/06129051-5c7b-4491-a795-858d28782d8a)
 ![relatorio_vendas_nortriptilina-05](https://github.com/user-attachments/assets/78986b48-ae61-4381-bf85-6b01d0c665b8)
 ![relatorio_vendas_nortriptilina-04](https://github.com/user-attachments/assets/698d497d-ff7d-46d2-80dd-f8e4c2c8129f)
-![relatorio_vendas_nortriptilina-03](https://github.com/user-attachments/assets/8061ccdf-ecea-4d4b-b169-636cde321520)
 
 ## Dashboard criado no PowerBI
 ![Screenshot_1](https://github.com/user-attachments/assets/04971763-d331-4007-8cc1-c1bd27db1c16)
