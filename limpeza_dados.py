@@ -19,16 +19,6 @@ print(dados.isnull().sum())
 dados['IDADE'].fillna(dados['IDADE'].mean(), inplace=True)
 dados.fillna({'QTD_UNIDADE_FARMACOTECNICA': 0, 'SEXO': 'Desconhecido'}, inplace=True)
 
-# Renomear a coluna SEXO para GÊNERO
-dados.rename(columns={'SEXO': 'GÊNERO'}, inplace=True)
-
-# Substituir valores na coluna GÊNERO
-dados['GÊNERO'] = dados['GÊNERO'].replace({
-    1: 'Masculino',
-    2: 'Feminino',
-    'Desconhecido': 'Não informado'
-})
-
 # --- EXCLUSÃO DE DADOS COM IDADE INVÁLIDA ---
 # Filtrar apenas idades acima de 18 anos
 dados = dados[dados['IDADE'] >= 18]
@@ -54,6 +44,9 @@ dados['MÊS_VENDA'] = dados['MÊS_VENDA'].map(meses)
 
 # Remover acentos dos nomes dos meses
 dados['MÊS_VENDA'] = dados['MÊS_VENDA'].apply(remover_acentos)
+
+# Excluir a coluna 'SEXO' ou 'GÊNERO'
+dados.drop(columns=['SEXO'], inplace=True)  # Remover a coluna 'SEXO' diretamente
 
 # Exibir dados após a conversão de datas
 print("Dados após a conversão de datas:")

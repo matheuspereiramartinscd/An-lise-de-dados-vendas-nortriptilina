@@ -69,37 +69,7 @@ plt.close()
 doc.add_paragraph("Gráfico de Tendência de Vendas por Mês/Ano:")
 doc.add_picture(grafico_vendas_mes, width=Inches(5.5))
 
-# 2. Vendas por Gênero
-vendas_genero = dados.groupby('GÊNERO')['QTD_UNIDADE_FARMACOTECNICA'].sum().reset_index()
-
-# Adicionando vendas por gênero ao documento
-doc.add_heading('Vendas por Gênero', level=1)
-doc.add_paragraph(f"Vendas distribuídas por Gênero:")
-table = doc.add_table(rows=1, cols=len(vendas_genero.columns))
-hdr_cells = table.rows[0].cells
-for i, column in enumerate(vendas_genero.columns):
-    hdr_cells[i].text = column
-
-for index, row in vendas_genero.iterrows():
-    row_cells = table.add_row().cells
-    for i, value in enumerate(row):
-        row_cells[i].text = str(value)
-
-# Gráfico de vendas por gênero
-plt.figure(figsize=(8, 6))
-sns.barplot(data=vendas_genero, x='GÊNERO', y='QTD_UNIDADE_FARMACOTECNICA', palette='muted')
-plt.title('Vendas por Gênero')
-plt.xlabel('Gênero')
-plt.ylabel('Quantidade Vendida')
-plt.tight_layout()
-grafico_vendas_genero = 'vendas_por_genero.png'
-plt.savefig(grafico_vendas_genero)
-plt.close()
-
-doc.add_paragraph("Gráfico de Vendas por Gênero:")
-doc.add_picture(grafico_vendas_genero, width=Inches(5.5))
-
-# 3. Vendas por Estado (UF)
+# 2. Vendas por Estado (UF)
 vendas_uf = dados.groupby('UF_VENDA')['QTD_UNIDADE_FARMACOTECNICA'].sum().reset_index()
 
 # Adicionando vendas por estado ao documento
@@ -130,7 +100,7 @@ plt.close()
 doc.add_paragraph("Gráfico de Vendas por Estado (UF):")
 doc.add_picture(grafico_vendas_uf, width=Inches(5.5))
 
-# 4. Vendas por Município
+# 3. Vendas por Município
 vendas_municipio = dados.groupby('MUNICIPIO_VENDA')['QTD_UNIDADE_FARMACOTECNICA'].sum().reset_index()
 
 # Adicionando vendas por município ao documento
@@ -161,7 +131,7 @@ plt.close()
 doc.add_paragraph("Gráfico de Vendas por Município (Top 10):")
 doc.add_picture(grafico_vendas_municipio, width=Inches(5.5))
 
-# 5. Estatísticas da Idade
+# 4. Estatísticas da Idade
 doc.add_heading('Estatísticas de Idade', level=1)
 doc.add_paragraph(f"Estatísticas de Idade dos Clientes:")
 idade_stats = dados['IDADE'].describe()
