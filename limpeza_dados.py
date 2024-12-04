@@ -45,8 +45,7 @@ dados['MÊS_VENDA'] = dados['MÊS_VENDA'].map(meses)
 # Remover acentos dos nomes dos meses
 dados['MÊS_VENDA'] = dados['MÊS_VENDA'].apply(remover_acentos)
 
-# Excluir a coluna 'SEXO' ou 'GÊNERO'
-dados.drop(columns=['SEXO'], inplace=True)  # Remover a coluna 'SEXO' diretamente
+
 
 # Exibir dados após a conversão de datas
 print("Dados após a conversão de datas:")
