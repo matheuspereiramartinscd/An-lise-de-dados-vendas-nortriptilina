@@ -37,7 +37,6 @@ O dataset utilizado contém as seguintes colunas:
 | `ANO_VENDA`                | Ano da venda                      |
 | `MÊS_VENDA`                | Data do mês da venda              |
 | `MÊS_VENCIMENTO`           | Data do vencimento                |
-| `SEXO`                     | Sexo do cliente                   |
 | `IDADE`                    | Idade do cliente                  |
 | `UF_VENDA`                 | Estado da venda                   |
 | `MUNICIPIO_VENDA`          | Município da venda                |
@@ -82,14 +81,15 @@ O dataset utilizado contém as seguintes colunas:
 
 - Identificação de tendências de vendas por mês e ano.
 - Análise geográfica detalhada das vendas (por estado e município).
-- Entendimento do perfil dos clientes (idade e gênero).
 - Identificação de outliers em vendas mensais.
 
 ## Dados
-![dados](https://github.com/user-attachments/assets/da2eb21d-d9d2-4bbe-a924-af670b854233)
+![Screenshot_3](https://github.com/user-attachments/assets/8233f5a4-bd6c-44b2-b15a-4bfa0ebdae49)
+
 
 ## Após limpeza
-![Screenshot_1](https://github.com/user-attachments/assets/cf68673d-c921-450c-9fd7-120288b4d494)
+![Screenshot_2](https://github.com/user-attachments/assets/07715a86-b79d-45c1-8dd2-4598d507d5f4)
+
 
 ## Relatório
 ![relatorio_vendas_nortriptilina-01](https://github.com/user-attachments/assets/2d543643-d931-4801-ae89-b5a41226d509)
@@ -105,8 +105,9 @@ O dataset utilizado contém as seguintes colunas:
 ![relatorio_vendas_nortriptilina-03](https://github.com/user-attachments/assets/8061ccdf-ecea-4d4b-b169-636cde321520)
 
 ## Dashboard criado no PowerBI
+![Screenshot_1](https://github.com/user-attachments/assets/04971763-d331-4007-8cc1-c1bd27db1c16)
 
-![powerbi](https://github.com/user-attachments/assets/ed35fc27-0d9c-4adb-badd-c12aa32362ea)
+
 
 
 
