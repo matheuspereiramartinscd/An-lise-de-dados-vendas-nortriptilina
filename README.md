@@ -1,8 +1,6 @@
 
-# Análise de Dados de Vendas - Cloridrato de Nortriptilina
-
-Este repositório contém scripts Python para análise e limpeza de dados relacionados às vendas do medicamento Cloridrato de Nortriptilina.
-
+# Análise de Dados de Vendas - Medicamentos
+Este repositório contém scripts Python para análise e limpeza de dados relacionados às vendas de medicamentos
 ## Objetivo
 
 O objetivo deste projeto é processar e analisar um dataset de vendas, fornecendo insights úteis para tomada de decisão. O foco está na limpeza de dados, análise estatística e geração de relatórios.
@@ -37,7 +35,6 @@ O dataset utilizado contém as seguintes colunas:
 | `ANO_VENDA`                | Ano da venda                      |
 | `MÊS_VENDA`                | Data do mês da venda              |
 | `MÊS_VENCIMENTO`           | Data do vencimento                |
-| `SEXO`                     | Sexo do cliente                   |
 | `IDADE`                    | Idade do cliente                  |
 | `UF_VENDA`                 | Estado da venda                   |
 | `MUNICIPIO_VENDA`          | Município da venda                |
@@ -82,31 +79,30 @@ O dataset utilizado contém as seguintes colunas:
 
 - Identificação de tendências de vendas por mês e ano.
 - Análise geográfica detalhada das vendas (por estado e município).
-- Entendimento do perfil dos clientes (idade e gênero).
 - Identificação de outliers em vendas mensais.
 
 ## Dados
-![dados](https://github.com/user-attachments/assets/da2eb21d-d9d2-4bbe-a924-af670b854233)
+![Screenshot_3](https://github.com/user-attachments/assets/8233f5a4-bd6c-44b2-b15a-4bfa0ebdae49)
+
 
 ## Após limpeza
-![Screenshot_1](https://github.com/user-attachments/assets/cf68673d-c921-450c-9fd7-120288b4d494)
+![Screenshot_2](https://github.com/user-attachments/assets/07715a86-b79d-45c1-8dd2-4598d507d5f4)
+
 
 ## Relatório
-![relatorio_vendas_nortriptilina-01](https://github.com/user-attachments/assets/2d543643-d931-4801-ae89-b5a41226d509)
-![relatorio_vendas_nortriptilina-02](https://github.com/user-attachments/assets/a8bff2cd-9380-48f2-8042-1e6d41c2bff6)
-![relatorio_vendas_nortriptilina-11](https://github.com/user-attachments/assets/6405d4a5-2f3b-4d32-ba7a-ed19c4456e48)
+![Screenshot_4](https://github.com/user-attachments/assets/53eb7cd3-c623-4ef8-90fd-aa4666139279)
+![Screenshot_5](https://github.com/user-attachments/assets/827650de-6550-420f-822d-8a210293c124)
 ![relatorio_vendas_nortriptilina-10](https://github.com/user-attachments/assets/fb350606-e67e-45bf-980e-01b5c57dd1cc)
 ![relatorio_vendas_nortriptilina-09](https://github.com/user-attachments/assets/dca826d0-3c5e-4822-8b72-54e1a5dc9c83)
 ![relatorio_vendas_nortriptilina-08](https://github.com/user-attachments/assets/3ecfd0d3-c716-42f9-96f3-e5a897cfa768)
 ![relatorio_vendas_nortriptilina-07](https://github.com/user-attachments/assets/3c2d7df4-fd71-495a-91cf-63435e6e62be)
 ![relatorio_vendas_nortriptilina-06](https://github.com/user-attachments/assets/06129051-5c7b-4491-a795-858d28782d8a)
 ![relatorio_vendas_nortriptilina-05](https://github.com/user-attachments/assets/78986b48-ae61-4381-bf85-6b01d0c665b8)
-![relatorio_vendas_nortriptilina-04](https://github.com/user-attachments/assets/698d497d-ff7d-46d2-80dd-f8e4c2c8129f)
-![relatorio_vendas_nortriptilina-03](https://github.com/user-attachments/assets/8061ccdf-ecea-4d4b-b169-636cde321520)
 
 ## Dashboard criado no PowerBI
+![Screenshot_1](https://github.com/user-attachments/assets/04971763-d331-4007-8cc1-c1bd27db1c16)
 
-![powerbi](https://github.com/user-attachments/assets/ed35fc27-0d9c-4adb-badd-c12aa32362ea)
+
 
 
 
