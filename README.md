@@ -1,8 +1,6 @@
 
-# Análise de Dados de Vendas - Cloridrato de Nortriptilina
-
-Este repositório contém scripts Python para análise e limpeza de dados relacionados às vendas do medicamento Cloridrato de Nortriptilina.
-
+# Análise de Dados de Vendas - Medicamentos
+Este repositório contém scripts Python para análise e limpeza de dados relacionados às vendas de medicamentos
 ## Objetivo
 
 O objetivo deste projeto é processar e analisar um dataset de vendas, fornecendo insights úteis para tomada de decisão. O foco está na limpeza de dados, análise estatística e geração de relatórios.
