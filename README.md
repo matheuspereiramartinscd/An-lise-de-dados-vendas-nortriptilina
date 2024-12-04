@@ -5,6 +5,8 @@ Este repositório contém scripts Python para análise e limpeza de dados relaci
 
 O objetivo deste projeto é processar e analisar um dataset de vendas, fornecendo insights úteis para tomada de decisão. O foco está na limpeza de dados, análise estatística e geração de relatórios.
 
+https://colab.research.google.com/drive/1Dwdio-B_cC_xovea7SbTMza3C1HSV8Fq?usp=sharing
+
 ## Estrutura do Projeto
 
 ### 1. `limpeza_dados.py`
