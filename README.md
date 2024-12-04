@@ -90,7 +90,8 @@ O dataset utilizado contém as seguintes colunas:
 
 
 ## Relatório
-![392001097-a8bff2cd-9380-48f2-8042-1e6d41c2bff6](https://github.com/user-attachments/assets/4c992af4-852d-4e90-9b76-050e9f76c49e)
+![Screenshot_4](https://github.com/user-attachments/assets/53eb7cd3-c623-4ef8-90fd-aa4666139279)
+![Screenshot_5](https://github.com/user-attachments/assets/827650de-6550-420f-822d-8a210293c124)
 ![392001134-6405d4a5-2f3b-4d32-ba7a-ed19c4456e48](https://github.com/user-attachments/assets/c9d71ef6-9fd0-4585-acc8-e16a9e45c01c)
 ![relatorio_vendas_nortriptilina-10](https://github.com/user-attachments/assets/fb350606-e67e-45bf-980e-01b5c57dd1cc)
 ![relatorio_vendas_nortriptilina-09](https://github.com/user-attachments/assets/dca826d0-3c5e-4822-8b72-54e1a5dc9c83)
