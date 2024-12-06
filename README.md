@@ -16,8 +16,7 @@ https://colab.research.google.com/drive/1Dwdio-B_cC_xovea7SbTMza3C1HSV8Fq?usp=sh
   - Identificação e tratamento de valores ausentes.
   - Exclusão de duplicatas.
   - Padronização de datas e valores monetários.
-  - Exclusão de registros inválidos, como idades menores que 18.
-
+  - Exclusão de registros inválidos
 ### 2. `relatorio.py`
 
 - **Descrição**: Script para geração de relatórios em formato Word, com visualizações gráficas geradas a partir do dataset.
